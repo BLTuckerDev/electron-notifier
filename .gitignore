@@ -1,0 +1,11 @@
+node_modules
+typings
+build
+releases
+
+.editorconfig
+.DS_Store
+.idea/
+
+app/*.js.map
+app/*.js
