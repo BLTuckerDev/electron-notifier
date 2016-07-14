@@ -1,19 +1,21 @@
 
 export class AppNotification {
 
-    notificationPeriodInSeconds: number;
+    message: string;
+    notificationPeriodInMinutes: number;
 
     intervalId: number;
 
-    constructor(notificationPeriodInSeconds: number){
-        this.notificationPeriodInSeconds = notificationPeriodInSeconds;
+    constructor(message: string, notificationPeriodInMinutes: number){
+        this.message = message;
+        this.notificationPeriodInMinutes = notificationPeriodInMinutes;
     }
 
 
     start(): void {
         this.intervalId = setInterval(function () {
             console.log("Timeout!");
-        }, this.notificationPeriodInSeconds * 1000);
+        }, this.notificationPeriodInMinutes * 60 * 1000);
     }
 
     stop() : void{
