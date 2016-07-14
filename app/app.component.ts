@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { APP_PROVIDERS } from './app.providers';
-import {LandingComponent} from "./landing.component";
+import {LandingComponent} from "./landing/landing.component";
 
 @Component({
   selector: 'electron-notifier-app',

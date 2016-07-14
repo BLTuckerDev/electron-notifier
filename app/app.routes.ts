@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import {LandingComponent} from "./landing.component";
+import {LandingComponent} from "./landing/landing.component";
 
 const routes: RouterConfig = [
   { path: '',  terminal: true, redirectTo: '/home' },
