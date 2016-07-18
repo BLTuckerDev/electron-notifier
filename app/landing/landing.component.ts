@@ -20,6 +20,7 @@ export class LandingComponent{
     console.log("onSubmit");
     var notification = new AppNotification(formData.notificationText, formData.notificationPeriod);
     this.notificationRepository.saveNotification(notification);
+    notification.start();
   }
 
 }

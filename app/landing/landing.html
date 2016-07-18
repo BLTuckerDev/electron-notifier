@@ -1,6 +1,5 @@
 <div style="padding: 16px">
-    <h1>Hello Electron & Angular!</h1>
-
+    
     <form #f="ngForm"
     (ngSubmit)="onSubmit(f.value)">
 
@@ -22,4 +21,13 @@
 
         <button type="submit">Create</button>
     </form>
+
+
+    <ul>
+        <li *ngFor="let notification of notificationRepository.notifications">
+            {{notification.message}}
+        </li>
+    </ul>
+
+
 </div>
