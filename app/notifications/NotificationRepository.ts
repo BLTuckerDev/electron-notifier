@@ -14,7 +14,6 @@ export class NotificationRepository{
     public saveNotification(notification: AppNotification){
         console.log("Pushing notification into array");
         this.notifications.push(notification);
-        console.log("notification array: ", this.notifications);
     }
 
 }

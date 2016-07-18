@@ -1,5 +1,9 @@
+declare var Notification: any;
 
 export class AppNotification {
+
+    static SECONDS_IN_MINUTE = 60;
+    static MILLISECONDS_IN_SECOND = 1000;
 
     message: string;
     notificationPeriodInMinutes: number;
@@ -11,17 +15,17 @@ export class AppNotification {
         this.notificationPeriodInMinutes = notificationPeriodInMinutes;
     }
 
-
     start(): void {
         this.intervalId = setInterval(function () {
-            console.log("Timeout!");
-        }, this.notificationPeriodInMinutes * 60 * 1000);
+            console.log("Firing notification!");
+            var title = this.message;
+            new Notification(title, {});
+        }, this.notificationPeriodInMinutes * AppNotification.SECONDS_IN_MINUTE * AppNotification.MILLISECONDS_IN_SECOND);
     }
 
     stop() : void{
         clearInterval(this.intervalId);
     }
-
 }
 
 
