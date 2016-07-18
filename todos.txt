@@ -1,0 +1,4 @@
+create a child notification item component to use in the ngFor
+allow starting and stopping of a notification within the item component
+tests for components and objects so far
+someday save notifications to json file on app close and restore from there as well
