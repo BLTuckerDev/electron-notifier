@@ -16,9 +16,10 @@ export class AppNotification {
     }
 
     start(): void {
-        this.intervalId = setInterval(function () {
+      var title = this.message;
+
+      this.intervalId = setInterval(function () {
             console.log("Firing notification!");
-            var title = this.message;
             new Notification(title, {});
         }, this.notificationPeriodInMinutes * AppNotification.SECONDS_IN_MINUTE * AppNotification.MILLISECONDS_IN_SECOND);
     }
