@@ -1,5 +1,5 @@
 <div style="padding: 16px">
-    
+
     <form #f="ngForm"
     (ngSubmit)="onSubmit(f.value)">
 
@@ -24,9 +24,10 @@
 
 
     <ul>
-        <li *ngFor="let notification of notificationRepository.notifications">
-            {{notification.message}}
-        </li>
+      <notification-item
+        *ngFor="let notification of notificationRepository.notifications"
+        [appNotification]="notification" ></notification-item>
+
     </ul>
 
 

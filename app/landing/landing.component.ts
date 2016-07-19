@@ -2,9 +2,11 @@ import {Component, Inject} from "@angular/core";
 import {AppNotification} from "../appNotification";
 import {FormControl} from "@angular/forms";
 import {NotificationRepository} from "../notifications/NotificationRepository";
+import {NotificationItem} from "../notifications/NotificationItem.component";
 
 @Component({selector: 'landing',
-  templateUrl: `app/landing/landing.html`
+  templateUrl: `app/landing/landing.html`,
+  directives: [NotificationItem]
 })
 export class LandingComponent{
 
