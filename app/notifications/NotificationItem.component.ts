@@ -19,4 +19,12 @@ export class NotificationItem {
 
   }
 
+  public onStart(){
+    this.appNotification.start();
+  }
+
+  public onStop(){
+    this.appNotification.stop();
+  }
+
 }
