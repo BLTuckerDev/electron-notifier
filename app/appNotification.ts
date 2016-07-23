@@ -26,7 +26,13 @@ export class AppNotification {
 
     stop() : void{
         clearInterval(this.intervalId);
+        this.intervalId = -1;
     }
+
+    isStarted(): boolean{
+        return this.intervalId !== -1;
+    }
+
 }
 
 
