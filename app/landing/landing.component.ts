@@ -25,6 +25,10 @@ export class LandingComponent{
     notification.start();
   }
 
+  onDeleteEvent(deletedAppNotification: AppNotification){
+    this.notificationRepository.removeNotification(deletedAppNotification);
+  }
+
 }
 
 

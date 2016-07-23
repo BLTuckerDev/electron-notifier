@@ -26,6 +26,7 @@
     <ul>
       <notification-item
         *ngFor="let notification of notificationRepository.notifications"
+        (deleteEvent)="onDeleteEvent($event)"
         [appNotification]="notification" ></notification-item>
 
     </ul>

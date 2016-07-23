@@ -1,11 +1,11 @@
 <li style="max-width: 300px;">
-  {{appNotification.message}}
-  <div align="right">
-    <Button><i style="color: #ff3300;" class="material-icons">stop</i></Button>
-    <Button><i style="color: #00ff00;" class="material-icons">play_circle_outline</i></Button>
+  <div>
+    <span style="margin-right: 16px;">{{appNotification.message}}</span>
+    <Button (click)="onDelete()" ><i style="color: black;" class="material-icons">close</i></Button>
   </div>
-
-
-
-
+  <br/>
+  <div align="left">
+    <Button *ngIf="appNotification.isStarted()" (click)="onStop()" ><i style="color: #ff3300;" class="material-icons">stop</i></Button>
+    <Button *ngIf="!appNotification.isStarted()" (click)="onStart()"><i style="color: #00ff00;" class="material-icons">play_circle_outline</i></Button>
+  </div>
 </li>

@@ -1,12 +1,7 @@
-import {Component, Input} from "@angular/core"
+import {Component, Input, Output, EventEmitter} from "@angular/core"
 import {AppNotification} from "../appNotification";
 
 
-/*
- notification
-
-
- */
 @Component({
   selector: "notification-item",
   templateUrl: "app/notifications/notification-item.html"
@@ -14,9 +9,10 @@ import {AppNotification} from "../appNotification";
 export class NotificationItem {
 
   @Input() appNotification: AppNotification;
+  @Output() deleteEvent: EventEmitter<AppNotification>;
 
   constructor(){
-
+    this.deleteEvent = new EventEmitter<AppNotification>();
   }
 
   public onStart(){
@@ -25,6 +21,10 @@ export class NotificationItem {
 
   public onStop(){
     this.appNotification.stop();
+  }
+
+  public onDelete(){
+    this.deleteEvent.emit(this.appNotification);
   }
 
 }

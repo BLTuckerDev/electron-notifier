@@ -16,4 +16,12 @@ export class NotificationRepository{
         this.notifications.push(notification);
     }
 
+    public removeNotification(notification: AppNotification){
+        if(notification.isStarted()){
+            notification.stop();
+        }
+        var indexOf = this.notifications.indexOf(notification);
+        this.notifications.splice(indexOf, 1);
+    }
+
 }
