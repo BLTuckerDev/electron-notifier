@@ -13,6 +13,7 @@ export class AppNotification {
     constructor(message: string, notificationPeriodInMinutes: number){
         this.message = message;
         this.notificationPeriodInMinutes = notificationPeriodInMinutes;
+        this.intervalId = -1;
     }
 
     start(): void {
