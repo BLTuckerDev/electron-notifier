@@ -5,14 +5,13 @@ import {AppNotification} from "../appNotification";
 @Injectable()
 export class NotificationRepository{
 
-    private notifications: Array<AppNotification>;
+    notifications: Array<AppNotification>;
 
     constructor(){
         this.notifications = [];
     }
 
     public saveNotification(notification: AppNotification){
-        console.log("Pushing notification into array");
         this.notifications.push(notification);
     }
 
@@ -23,5 +22,4 @@ export class NotificationRepository{
         var indexOf = this.notifications.indexOf(notification);
         this.notifications.splice(indexOf, 1);
     }
-
 }

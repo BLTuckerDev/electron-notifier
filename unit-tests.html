@@ -31,7 +31,9 @@
     // #3. Import the spec file explicitly
     Promise.all([
             System.import('app/appNotification.spec'),
-            System.import('app/notifications/NotificationItem.spec')])
+            System.import('app/notifications/NotificationItem.spec'),
+            System.import('app/notifications/NotificationRepository.spec')
+            ])
 
     // #4. wait for all imports to load ...
     //     then re-execute `window.onload` which
