@@ -8,4 +8,6 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - npm --version
           - npm install
+          - npm install typings
+          - typings install
           - npm test
