@@ -11,7 +11,13 @@
 <body>
 <body>
 <!-- #1. add the system.js library -->
-<script src="../node_modules/systemjs/dist/system.src.js"></script>
+<script src="node_modules/zone.js/dist/zone.js"></script>
+<script src="node_modules/reflect-metadata/Reflect.js"></script>
+<script src="node_modules/systemjs/dist/system.src.js"></script>
+<script src="systemjs.config.js"></script>
+
+<script src="node_modules/rxjs/bundles/Rx.js"></script>
+
 
 <script>
     // #2. Configure systemjs to use the .js extension
@@ -23,7 +29,9 @@
     });
 
     // #3. Import the spec file explicitly
-    System.import('app/appNotification.spec')
+    Promise.all([
+            System.import('app/appNotification.spec'),
+            System.import('app/notifications/NotificationItem.spec')])
 
     // #4. wait for all imports to load ...
     //     then re-execute `window.onload` which
