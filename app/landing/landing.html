@@ -23,13 +23,17 @@
     </form>
 
 
-    <ul>
-      <notification-item
-        *ngFor="let notification of notificationRepository.notifications"
-        (deleteEvent)="onDeleteEvent($event)"
-        [appNotification]="notification" ></notification-item>
+  <div>
+    <md-grid-list cols="3">
+      <md-grid-tile *ngFor="let notification of notificationRepository.notifications">
+        <notification-item
+          (deleteEvent)="onDeleteEvent($event)"
+          [appNotification]="notification" ></notification-item>
+      </md-grid-tile>
 
-    </ul>
+    </md-grid-list>
+  </div>
+
 
 
 </div>
