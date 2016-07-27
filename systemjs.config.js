@@ -37,6 +37,7 @@
     'core',
     'button',
     'card',
+    'grid-list'
   ];
 
   materialPkgs.forEach(function(pkg) {
