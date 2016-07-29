@@ -1,39 +1,39 @@
-<div style="padding: 16px">
+<div>
+    <md-card style="margin-bottom: 16px; padding: 16px;">
 
-    <form #f="ngForm"
-    (ngSubmit)="onSubmit(f.value)">
+        <form #f="ngForm"
+              (ngSubmit)="onSubmit(f.value)">
 
-        <div>
-            <label style="padding-right: 8px; padding-bottom: 8px" for="notificationText">Notification Text</label>
-            <input  type="text"
-                    id="notificationText"
-                    placeholder="Enter the text that you like to see in the notification"
-                    name="notificationText" ngModel>
-        </div>
+            <div>
+                <label style="padding-right: 8px; padding-bottom: 8px" for="notificationText">Notification Text</label>
+                <input  type="text"
+                        id="notificationText"
+                        placeholder="Enter the text that you like to see in the notification"
+                        name="notificationText" ngModel>
+            </div>
 
-        <div>
-            <label style="padding-right: 8px; padding-bottom: 8px" for="notificationPeriod">Time between notification in minutes</label>
-            <input  type="text"
-                    id="notificationPeriod"
-                    placeholder="minutes"
-                    name="notificationPeriod" ngModel>
-        </div>
+            <div>
+                <label style="padding-right: 8px; padding-bottom: 8px" for="notificationPeriod">Time between notification in minutes</label>
+                <input  type="text"
+                        id="notificationPeriod"
+                        placeholder="minutes"
+                        name="notificationPeriod" ngModel>
+            </div>
 
-        <button type="submit">Create</button>
-    </form>
+            <button type="submit">Create</button>
+        </form>
+    </md-card>
 
-
-  <div>
-    <md-grid-list cols="3">
-      <md-grid-tile *ngFor="let notification of notificationRepository.notifications">
-        <notification-item
-          (deleteEvent)="onDeleteEvent($event)"
-          [appNotification]="notification" ></notification-item>
-      </md-grid-tile>
-
-    </md-grid-list>
-  </div>
-
+    <div style="padding: 16px;">
+        <notification-item *ngFor="let notification of notificationRepository.notifications"
+                           (deleteEvent)="onDeleteEvent($event)"
+                           [appNotification]="notification" ></notification-item>
+    </div>
 
 
 </div>
+
+
+
+
+

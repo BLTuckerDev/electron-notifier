@@ -3,14 +3,15 @@ import {AppNotification} from "../appNotification";
 import {FormControl} from "@angular/forms";
 import {NotificationRepository} from "../notifications/NotificationRepository";
 import {NotificationItem} from "../notifications/NotificationItem.component";
-import {MD_GRID_LIST_DIRECTIVES} from '@angular2-material/grid-list'
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import {MD_SIDENAV_DIRECTIVES} from "@angular2-material/sidenav/sidenav";
+import {MD_CARD_DIRECTIVES} from "@angular2-material/card/card";
 
 
 
 @Component({selector: 'landing',
   templateUrl: `app/landing/landing.html`,
-  directives: [NotificationItem, MD_GRID_LIST_DIRECTIVES, MD_BUTTON_DIRECTIVES]
+  directives: [NotificationItem, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_SIDENAV_DIRECTIVES]
 })
 export class LandingComponent{
 

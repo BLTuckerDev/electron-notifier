@@ -1,13 +1,12 @@
-<md-card style="max-width: 300px;">
-  <div>
-    <span style="margin-right: 16px;">{{appNotification.message}}</span>
-    <button md-button style="color: red" (click)="onDelete()"><md-icon _ngcontent-lma-1="" role="img" class="material-icons" aria-label="close circle">close</md-icon></button>
-  </div>
-  <br/>
+<md-card style="margin-bottom: 8px;">
+  <md-card-title-group>
+    <button md-icon-button style="color: black;" (click)="onDelete()"><md-icon  class="material-icons">close</md-icon></button>
+    <md-card-title>{{appNotification.message}}</md-card-title>
+  </md-card-title-group>
   <md-card-actions>
-    <button md-button *ngIf="appNotification.isStarted()" (click)="onStop()"><md-icon style="color: black;" class="material-icons">stop</md-icon>
+    <button md-icon-button *ngIf="appNotification.isStarted()" (click)="onStop()"><md-icon style="color: red" class="material-icons">stop</md-icon>
     </button>
-    <button md-button *ngIf="!appNotification.isStarted()" (click)="onStart()"><md-icon style="color: #00ff00;" class="material-icons">play_circle_outline</md-icon>
+    <button md-icon-button *ngIf="!appNotification.isStarted()" (click)="onStart()"><md-icon style="color: #00ff00;" class="material-icons">play_circle_outline</md-icon>
     </button>
   </md-card-actions>
 </md-card>
