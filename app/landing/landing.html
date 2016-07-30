@@ -1,30 +1,39 @@
-<div>
-    <md-card style="margin-bottom: 16px; padding: 16px;">
+<div class="light-primary-color">
+    <md-card style="margin-bottom: 16px; padding: 16px;" class="default-font card-background primary-text-color">
+        <md-card-content>
+            <form #f="ngForm"
+                  (ngSubmit)="onSubmit(f.value)">
 
-        <form #f="ngForm"
-              (ngSubmit)="onSubmit(f.value)">
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <md-input
+                                    #text
+                                    align="start"
+                                    id="notificationText"
+                                    placeholder="Remind me to..."
+                                    name="notificationText" ngModel></md-input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <md-input
+                                    #number
+                                    placeholder="every ... minutes"
+                                    type="text"
+                                    align="start"
+                                    id="notificationPeriod"
+                                    name="notificationPeriod" ngModel></md-input>
+                        </td>
+                    </tr>
+                </table>
 
-            <div>
-                <label style="padding-right: 8px; padding-bottom: 8px" for="notificationText">Notification Text</label>
-                <input  type="text"
-                        id="notificationText"
-                        placeholder="Enter the text that you like to see in the notification"
-                        name="notificationText" ngModel>
-            </div>
-
-            <div>
-                <label style="padding-right: 8px; padding-bottom: 8px" for="notificationPeriod">Time between notification in minutes</label>
-                <input  type="text"
-                        id="notificationPeriod"
-                        placeholder="minutes"
-                        name="notificationPeriod" ngModel>
-            </div>
-
-            <button type="submit">Create</button>
-        </form>
+                <button  md-raised-button color="primary" type="submit">Create</button>
+            </form>
+        </md-card-content>
     </md-card>
 
-    <div style="padding: 16px;">
+    <div style="padding: 16px; height: 100%" >
         <notification-item *ngFor="let notification of notificationRepository.notifications"
                            (deleteEvent)="onDeleteEvent($event)"
                            [appNotification]="notification" ></notification-item>

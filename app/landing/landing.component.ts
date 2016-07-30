@@ -6,12 +6,13 @@ import {NotificationItem} from "../notifications/NotificationItem.component";
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import {MD_SIDENAV_DIRECTIVES} from "@angular2-material/sidenav/sidenav";
 import {MD_CARD_DIRECTIVES} from "@angular2-material/card/card";
+import {MD_INPUT_DIRECTIVES} from "@angular2-material/input/input";
 
 
 
 @Component({selector: 'landing',
   templateUrl: `app/landing/landing.html`,
-  directives: [NotificationItem, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_SIDENAV_DIRECTIVES]
+  directives: [NotificationItem, MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_INPUT_DIRECTIVES]
 })
 export class LandingComponent{
 
