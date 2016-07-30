@@ -38,7 +38,8 @@
     'button',
     'card',
     'grid-list',
-    'sidenav'
+    'sidenav',
+    'input'
   ];
 
   materialPkgs.forEach(function(pkg) {
