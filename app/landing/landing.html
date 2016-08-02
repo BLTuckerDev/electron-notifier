@@ -1,8 +1,10 @@
-<div class="light-primary-color">
-    <md-card style="margin-bottom: 16px; padding: 16px;" class="default-font card-background primary-text-color">
+<div class="light-primary-color" style="padding: 16px;">
+    <md-card style="margin: 0 auto; padding: 16px; max-width: 480px;"
+             class="default-font card-background primary-text-color">
         <md-card-content>
-            <form #f="ngForm"
-                  (ngSubmit)="onSubmit(f.value)">
+            <form #f="ngForm" style="margin: 0 auto;"
+                  (ngSubmit)="onSubmit(f.value)"
+                  id="reminderForm">
 
                 <table style="width: 100%">
                     <tr>
@@ -14,8 +16,7 @@
                                     placeholder="Remind me to..."
                                     name="notificationText" ngModel></md-input>
                         </td>
-                    </tr>
-                    <tr>
+
                         <td>
                             <md-input
                                     #number
@@ -28,18 +29,18 @@
                     </tr>
                 </table>
 
-                <button  md-raised-button color="primary" type="submit">Create</button>
             </form>
         </md-card-content>
+        <md-card-actions align="end" style="padding-right: 16px; padding-bottom: 16px;">
+            <button form="reminderForm" md-raised-button color="primary" type="submit">Create Reminder</button>
+        </md-card-actions>
     </md-card>
 
-    <div style="padding: 16px; height: 100%" >
+    <div style="padding: 16px; height: 100%">
         <notification-item *ngFor="let notification of notificationRepository.notifications"
                            (deleteEvent)="onDeleteEvent($event)"
-                           [appNotification]="notification" ></notification-item>
+                           [appNotification]="notification"></notification-item>
     </div>
-
-
 </div>
 
 

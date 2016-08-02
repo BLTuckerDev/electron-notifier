@@ -1,4 +1,4 @@
-<md-card style="margin-bottom: 8px;">
+<md-card style="margin-bottom: 8px;" class="card-background">
   <md-card-title-group>
     <button md-icon-button style="color: black;" (click)="onDelete()"><md-icon  class="material-icons">close</md-icon></button>
     <md-card-title>{{appNotification.message}}</md-card-title>
@@ -6,7 +6,7 @@
   <md-card-actions>
     <button md-icon-button *ngIf="appNotification.isStarted()" (click)="onStop()"><md-icon style="color: red" class="material-icons">stop</md-icon>
     </button>
-    <button md-icon-button *ngIf="!appNotification.isStarted()" (click)="onStart()"><md-icon style="color: #00ff00;" class="material-icons">play_circle_outline</md-icon>
+    <button md-raised-button *ngIf="!appNotification.isStarted()" (click)="onStart()"><md-icon style="color: #00ff00;" class="material-icons">play_circle_outline</md-icon> Start
     </button>
   </md-card-actions>
 </md-card>
