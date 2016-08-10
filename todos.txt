@@ -1,3 +1,4 @@
 tests for components once angularjs's testing tutorial is done
 add a timer animation that shows the progress toward the next time a notification will go off to the "stop" button
+update theme when angular2 material's theme stuff is implemented
 someday save notifications to json file on app close and restore from there as well
