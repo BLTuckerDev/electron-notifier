@@ -1,2 +1,3 @@
-tests for components and objects so far
+tests for components once angularjs's testing tutorial is done
+add a timer animation that shows the progress toward the next time a notification will go off to the "stop" button
 someday save notifications to json file on app close and restore from there as well
