@@ -4,9 +4,11 @@
     <md-card-title>{{appNotification.message}}</md-card-title>
   </md-card-title-group>
   <md-card-actions>
-    <button md-icon-button *ngIf="appNotification.isStarted()" (click)="onStop()"><md-icon style="color: red" class="material-icons">stop</md-icon>
+    <button md-raised-button *ngIf="appNotification.isStarted()" (click)="onStop()">
+      <md-icon style="color: red; vertical-align: middle; line-height: 1;" class="material-icons">stop</md-icon> Stop
     </button>
-    <button md-raised-button *ngIf="!appNotification.isStarted()" (click)="onStart()"><md-icon style="color: #00ff00;" class="material-icons">play_circle_outline</md-icon> Start
+    <button md-raised-button *ngIf="!appNotification.isStarted()" (click)="onStart()">
+      <md-icon style="color: #00ff00; vertical-align: middle; line-height: 1;" class="material-icons">play_circle_outline</md-icon> Start
     </button>
   </md-card-actions>
 </md-card>

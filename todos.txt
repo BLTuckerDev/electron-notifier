@@ -1,3 +1,2 @@
 tests for components and objects so far
-use angular material style to make the app look nicer
 someday save notifications to json file on app close and restore from there as well
